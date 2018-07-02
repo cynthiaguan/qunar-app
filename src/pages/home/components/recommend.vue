@@ -5,7 +5,7 @@
             <span class="my-title">猜你喜欢</span>
         </div>
         <ul class="my-like-list">
-            <li  class="my-like-item" v-for="(item,index) of recomList" :key="index">
+            <li  class="my-like-item border-bottom" v-for="(item,index) of recomList" :key="index">
                 <a>
                    <div class="my-like-imgcon">
                         <img class="mp-like-img" :src="item.imgUrl" alt="金海湖风景区">
@@ -26,6 +26,7 @@
                 </a>     
             </li>
         </ul>
+        <a href="#" class="my-like-more">查看所有产品</a>
     </div>
 </template>
 <script>
@@ -44,6 +45,8 @@ export default{
 }
 </script>
 <style lang="stylus" scoped>
+@import '~styles/mixin.styl'
+@import '~styles/variable.styl'
 .wrapper
     margin-top: .2 rem
     width:100%
@@ -70,7 +73,6 @@ export default{
     .my-like-list
         margin-left: .24rem
         list-style:none
-        padding: .2rem 0
         position:relative
         overflow: hidden
         .my-like-item
@@ -107,34 +109,42 @@ export default{
                     font-size:.32rem
                     line-height:.44rem
                     overflow:hidden
-                    width:3.7rem
-                    white-space:nowrap
-                    text-overflow:ellipsis
+                    min-width:0
+                    ellipisis()
                 .my-like-comment
                     margin-top:.14 rem
                     height:.34rem
                     .my-like-font
-                        color:#ffb436
+                        color:$myLikeFontColor
                         font-size:.2rem
                     .my-like-comnum
-                        color:#616161
+                        color:$myLikeComnum
                         font-size:.28rem
                         vertical-align:text-bottom
                         margin-left:.08rem
                 .my-like-price
                         margin-top:.22rem
-                        color:#61661
+                        color:$myLikeComnum
                         font-size:.24rem
                         line-height:.4rem
-                        color:#616161
+                        color:$myLikeComnum
                         position:relative
                         overflow:hidden
                         .my-hot-price
-                             color: #ff8300
+                             color: $myHotPrice
                              .my-price-num
                                 font-size: .4rem
                         .my-like-address
                             position: absolute
                             right: .24rem
                             bottom: 0
+    .my-like-more
+        display:inline-block
+        width:100%
+        text-decoration:none
+        font-size:.28 rem
+        line-height:.4rem
+        color:$myLikeMore
+        text-align:center
+        padding: .2rem 0
     </style>

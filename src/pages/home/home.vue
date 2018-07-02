@@ -3,7 +3,8 @@
     <Header></Header>  
     <Slider></Slider>
     <Category></Category>
-    <Recommend></Recommend>  
+    <Recommend></Recommend>
+    <Weekend></Weekend>  
 </div>    
 </template>
 
@@ -12,6 +13,7 @@ import Header from './components/header'
 import Slider from './components/slider'
 import Category from './components/category'
 import Recommend from './components/recommend'
+import Weekend from './components/weekend'
 export default {
     name:'Home',
     components:{
@@ -19,6 +21,7 @@ export default {
         Slider,
         Category,
         Recommend,
+        Weekend,
     }
 }
 
