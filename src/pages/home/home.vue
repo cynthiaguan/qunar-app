@@ -1,10 +1,10 @@
 <template>
 <div class="home">
     <Header></Header>  
-    <Slider></Slider>
-    <Category></Category>
-    <Recommend></Recommend>
-    <Weekend></Weekend>  
+    <Slider :swiperList="swiperList"></Slider>
+    <Category :iconList="iconList"></Category>
+    <Recommend :recomList="recomList"></Recommend>
+    <Weekend :weekendList="weekendList"></Weekend>  
 </div>    
 </template>
 
@@ -17,6 +17,14 @@ import Weekend from './components/weekend'
 import axios from 'axios'
 export default {
     name:'Home',
+    data () {
+        return {
+            weekendList:[],
+            swiperList:[],
+            recomList:[],
+            iconList:[],
+        }
+    },
     components:{
         Header,
         Slider,
@@ -30,7 +38,13 @@ export default {
                 .then(this.getHomeInfoSuccess)
         },
         getHomeInfoSuccess(res){
-            console.log(res)
+            const data = res.data
+            if(data.ret && data.data){
+                this.weekendList = data.data.weekendList
+                this.swiperList = data.data.swiperList
+                this.recomList = data.data.recommendList
+                this.iconList = data.data.iconList
+            }
         }
     },
     mounted () {

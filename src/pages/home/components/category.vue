@@ -16,28 +16,20 @@
 <script>
 export default {
     name:'Category',
+    props:{
+        iconList:Array
+    },
     data () {
-         return   {
-            categoryList: [
-                {id:'00001',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',desc:'热门景点'},
-                {id:'00003',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',desc:'必游榜单'},
-                {id:'00004',imgUrl:'http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png',desc:'夏日玩水'},
-                {id:'00005',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',desc:'一日游'},
-                {id:'00006',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',desc:'动植物园'},
-                {id:'00007',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png',desc:'故宫'},
-                {id:'00008',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',desc:'主题乐园'},
-                {id:'00009',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1804/ed/cf572be30fc32f02.png',desc:'Q+精选'},
-                {id:'00006',imgUrl:'https://imgs.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',desc:'动植物园'},                              
-            ],
+         return {
             swiperOption:{
                 pagination:'.swiper-pagination'               
-            },
+            }
         }
      },
    computed: {
         pages: function () {
-                const pages = [ ]
-                this.categoryList.forEach((item,index) => {
+                const pages = []
+                this.iconList.forEach((item,index) => {
                     const page = Math.floor(index  /  8)
                     
                     if(! pages[page]) {

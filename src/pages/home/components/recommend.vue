@@ -32,15 +32,8 @@
 <script>
 export default{
     name:"Recommend",
-    data () {
-        return {
-            recomList:[
-                {imgUrl:"http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg",name:"金海湖风景区",comnum:1295,price:24,district:"平谷区"},
-                {imgUrl:"https://imgs.qunarzz.com/sight/p0/1803/12/126471e0966aca5ba3.img.jpg_200x200_f1286016.jpg",name:"北京国际鲜花巷",comnum:1903,price:25,district:"顺义区"},
-                {imgUrl:"https://imgs.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_200x200_7690e4cd.jpg",name:"北京欢乐谷",comnum:54395,price:39.9,district:"朝阳区"},
-                {imgUrl:"https://imgs.qunarzz.com/sight/p0/201405/23/0265195fc4b7913a758674357c3cc8f6.jpg_200x200_b58ea00b.jpg",name:"北京欢乐水魔方",comnum:1295,price:24,district:"丰台区"},                
-            ]
-        }
+    props:{
+        recomList:Array
     }
 }
 </script>
