@@ -14,6 +14,7 @@ import Slider from './components/slider'
 import Category from './components/category'
 import Recommend from './components/recommend'
 import Weekend from './components/weekend'
+import axios from 'axios'
 export default {
     name:'Home',
     components:{
@@ -22,6 +23,18 @@ export default {
         Category,
         Recommend,
         Weekend,
+    },
+    methods:{
+        getHomeInfo(){
+            axios.get('/api/index.json')
+                .then(this.getHomeInfoSuccess)
+        },
+        getHomeInfoSuccess(res){
+            console.log(res)
+        }
+    },
+    mounted () {
+        this.getHomeInfo()
     }
 }
 

@@ -4,14 +4,14 @@
                 <h2>周末去哪儿</h2>
         </div>
         <ul class="my-like-list">
-            <li  v-for="(item,index) of recomList" :key="index">
+            <li  v-for="(item,index) of recommendList" :key="index">
                 <a href="#" title="link" class="my-full-link">
                    <div class="my-like-imgcon">
                         <img  :src="item.imgUrl" alt="">
                    </div>
                    <div class="my-product-info">
                         <p class="product-name">{{item.name}}</p>
-                        <p class="product-desc">{{item.desc}}}</p>
+                        <p class="product-desc">{{item.desc}}</p>
                    </div>                
                 </a>     
             </li>
@@ -23,7 +23,7 @@ export default{
     name:"Weekend",
     data () {
         return {
-            recomList:[
+            recommendList:[
                 {imgUrl:"http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg",name:"漂流勇进，烧烤露营",desc:"轻松水上漂，任我乐逍遥"},
                 {imgUrl:"http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg",name:"北京避暑胜地",desc:"到大自然中享受“天然空调”的清凉"},
                 {imgUrl:"http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg",name:"北京必游TOP10",desc:"来北京必去的景点非这些景点莫属"},
