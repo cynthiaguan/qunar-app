@@ -2,8 +2,10 @@
     <div class="header">
         <div class="header-left "><span class="iconfont">&#xe624;</span></div>
         <div class="header-mid"><span class="iconfont">&#xe632;</span>输入城市/游玩主题/景点</div>
-        <div class="header-right ">三亚<span class="iconfont">&#xe687;</span></div>       
-    </div>    
+        <router-link to="/city">
+            <div class="header-right ">三亚<span class="iconfont">&#xe687;</span></div>
+        </router-link>
+        </div>
 </template>
 
 <script>
@@ -37,4 +39,5 @@ export default {
         float:right
         width:1.24 rem
         text-align:center
+        color:#fff
 </style>
