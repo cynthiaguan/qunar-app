@@ -1,9 +1,11 @@
 <template>
     <div class="city-page">
         <div class="city-header">
-            <div class="city-header-left">
-                <span class="iconfont">&#xe624;</span>
-            </div>
+            <router-link to="/">
+                <div class="city-header-left">
+                    <span class="iconfont">&#xe624;</span>
+                </div>
+            </router-link>
             <h1 class="city-header-title">城市选择</h1>
         </div>
         <div class="city-container">
