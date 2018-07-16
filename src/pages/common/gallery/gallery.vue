@@ -23,9 +23,11 @@
 				],
 				swiperOption:{
 	                loop:true,
-	                autoplay:2000,
+	                autoplay:3000,
 	                pagination:'.swiper-pagination',
 	                paginationType : 'fraction',
+	                observer:true,
+    				observeParents:true,
 	            },
 			}
 		},

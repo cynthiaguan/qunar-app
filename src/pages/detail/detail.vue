@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-    import Banner from './components/detailHeader'
+    import Banner from './components/banner'
     export default{
         name:'Detail',
         components:{

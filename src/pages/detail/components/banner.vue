@@ -10,15 +10,15 @@
            <span class="iconfont">&#xeb26;</span>
            <em class="mp-imgswipeicon-number">15</em>
         </div>    
-        <Test v-show="showGallery"></Test>
+        <Gallery v-show="showGallery"></Gallery>
     </div>
 </template>
 <script>
-    import Test from './test'
+    import Gallery from '../../common/gallery/gallery'
     export default{
         name:'Banner',
         components:{
-            Test
+            Gallery
         },
         data () {
             return {showGallery:false}
