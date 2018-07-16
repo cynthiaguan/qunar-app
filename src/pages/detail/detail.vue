@@ -1,14 +1,14 @@
 <template>
     <div class="city">
-        <Detail-Header></Detail-Header>
+        <Banner></Banner>
     </div>
 </template>
 <script>
-    import DetailHeader from './components/detailHeader'
+    import Banner from './components/detailHeader'
     export default{
         name:'Detail',
         components:{
-            DetailHeader
+            Banner
         }
     }
 

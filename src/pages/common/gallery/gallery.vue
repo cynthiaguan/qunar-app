@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<div class="image-wrapper">
+		<div class="image-wrapper" @click="handleClick">
 			 <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiperList" class="image-slider">
 	            <!-- slides -->
 		            <swiper-slide v-for="slider of swiperList" :key="slider.id">
@@ -33,6 +33,11 @@
 	        showSwiperList: function(){
 	            return this.swiperList.length
 	        }
+	    },
+	    methods:{
+	    	handleClick:function(){
+	    		$.event.emit('close')
+	    	}
 	    }		
 	}	
 </script>
