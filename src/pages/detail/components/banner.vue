@@ -1,16 +1,18 @@
 <template>
-    <div class="header" @click="handleClick">
-        <div class="header-img-wrapper">
-            <img class="header-img" src="//img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_600x330_5d562f69.jpg" alt="金海湖风景区">
-        </div>
-        <div class="header-title">
-            金海湖风景区(AAAA景区)
-        </div>
-        <div class="header-icon">
-           <span class="iconfont">&#xeb26;</span>
-           <em class="mp-imgswipeicon-number">15</em>
+    <div class="header" >
+        <div @click="handleClick">
+            <div class="header-img-wrapper">
+                <img class="header-img" src="//img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_600x330_5d562f69.jpg" alt="金海湖风景区">
+            </div>
+            <div class="header-title">
+                金海湖风景区(AAAA景区)
+            </div>
+            <div class="header-icon">
+               <span class="iconfont">&#xeb26;</span>
+               <em class="mp-imgswipeicon-number">15</em>
+            </div>
         </div>    
-        <Gallery v-show="showGallery"></Gallery>
+        <Gallery v-show="showGallery" @close="handleGalleryClose"></Gallery>
     </div>
 </template>
 <script>
@@ -24,9 +26,12 @@
             return {showGallery:false}
         },
         methods:{
-            handleClick:function(){
+            handleGalleryClose:function($event){
+                return this.showGallery= false
+            },
+            handleClick:function(event){
                 return this.showGallery = true
-            }
+            },            
         }      
     }
 </script>
