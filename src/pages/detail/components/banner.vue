@@ -11,6 +11,9 @@
                <span class="iconfont">&#xeb26;</span>
                <em class="mp-imgswipeicon-number">15</em>
             </div>
+            <div class="header-back">
+               <
+            </div>
         </div>    
         <Gallery v-show="showGallery" @close="handleGalleryClose"></Gallery>
     </div>
@@ -67,4 +70,15 @@
             text-align: center;
             color:#fff
             border-radius: .2rem;
+        .header-back
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: .72rem;
+            line-height: .72rem;
+            text-align: left;
+            text-indent: .24rem
+            color:white
+            background:yellow            
 </style>
