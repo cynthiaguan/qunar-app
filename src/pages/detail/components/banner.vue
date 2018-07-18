@@ -1,6 +1,6 @@
 <template>
     <div class="header" >
-        <div @click="handleClick">
+        <div @click="handleClick">              
             <div class="header-img-wrapper">
                 <img class="header-img" src="//img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_600x330_5d562f69.jpg" alt="金海湖风景区">
             </div>
@@ -10,10 +10,7 @@
             <div class="header-icon">
                <span class="iconfont">&#xeb26;</span>
                <em class="mp-imgswipeicon-number">15</em>
-            </div>
-            <div class="header-back">
-               <
-            </div>
+            </div>                        
         </div>    
         <Gallery v-show="showGallery" @close="handleGalleryClose"></Gallery>
     </div>
@@ -66,19 +63,19 @@
             background: rgba(0,0,0,.5)
             width: 1.2rem
             height: .4rem
-            line-height: .4rem;
-            text-align: center;
+            line-height: .4rem
+            text-align: center
             color:#fff
-            border-radius: .2rem;
+            border-radius: .2rem
         .header-back
-            position: absolute;
-            left: 0;
-            top: 0;
-            display: block;
-            width: .72rem;
-            line-height: .72rem;
-            text-align: left;
-            text-indent: .24rem
+            position: absolute
+            left: .1rem
+            top: .1rem
+            width: .72rem
+            height: .72rem
+            line-height:.72rem
+            background-color: #194370
+            border-radius:50%
             color:white
-            background:yellow            
+            text-align:center       
 </style>
