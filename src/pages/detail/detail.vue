@@ -1,5 +1,5 @@
 <template>
-    <div class="city">
+    <div class="container">
         <Banner></Banner>
         <Header></Header>
     </div>
@@ -17,5 +17,7 @@
 
 </script>
 <style lang="stylus" scoped>
-   
+   .container
+        height:50rem
+        overflow:scroll
 </style>
