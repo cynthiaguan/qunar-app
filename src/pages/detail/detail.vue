@@ -12,7 +12,7 @@
         components:{
             Banner,
             Header,
-        }
+        },        
     }
 
 </script>

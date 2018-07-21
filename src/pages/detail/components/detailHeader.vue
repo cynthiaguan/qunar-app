@@ -1,12 +1,16 @@
 <template>
-    <div class="header" v-bind:class="{opacity:showOpacity}" @scroll="handleScroll">
-        <div class="header-back">
+    <div class="header">
+        <div class="header-back" v-show="showHeader">
             <span class="iconfont">&#xe624;</span>
         </div>
-        <router-link tag="div" to="/" class="header-left "><span class="iconfont">&#xe624;</span></router-link>
-        <h1 class="header-mid">
-            金海湖风景区
-        </h1>
+        <div v-show="!showHeader" class="header-abs" :style="showOpacity">
+            <router-link tag="div" to="/" class="header-left" >
+                <span class="iconfont">&#xe624;</span>
+            </router-link>
+            <h1 class="header-mid">
+                景点详情
+            </h1>
+        </div>
     </div>
 </template>
 <script>
@@ -14,15 +18,24 @@
         name:'Header',
         data () {
             return {
+                showHeader:true,
                 showOpacity:0
             }
         },
         methods:{
             handleScroll:function(){
-                console.log('122')
-                return this.showOpacity = ( scrollHeight / 200) < 1 ? scrollHeight / 200 : 1
+                console.log('1222')
+                const top = document.documentElement.scrollTop
+                if( top > 60){
+                    return this.showHeader = false
+                }else{
+                    return this.showHeader = true
+                }
             }
-        }    
+        },
+        activated: function () {
+            window.addEventListener('scroll',this.handleScroll)
+        },           
     }
 </script>
 <style lang="stylus" scoped>
@@ -32,21 +45,10 @@
         height:0.86 rem
         color:#fff
         line-height:0.86 rem
-        background:#00bcd4
         position:fixed
         top:0
         left:0
-        right:0
-        .header-left
-            float:left
-            width: 1 rem
-            text-align:center
-            color: #fff                    
-        .header-mid
-            flex:1
-            text-align:center
-            font-size:.32 rem
-            margin-right:1 rem               
+        right:0              
         .header-back
             position: absolute
             left: .1rem
@@ -57,5 +59,22 @@
             background-color: #194370
             border-radius:50%
             color:white
-            text-align:center       
+            text-align:center
+        .header-abs
+            display:flex
+            height:0.86 rem
+            color:#fff
+            line-height:0.86 rem
+            background:$bgColor
+            width:100%   
+            .header-left
+                float:left
+                width: 1 rem
+                text-align:center
+                color: #fff                    
+            .header-mid
+                flex:1
+                text-align:center
+                font-size:.32 rem
+                margin-right:1 rem                    
 </style>
