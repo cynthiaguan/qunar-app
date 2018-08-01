@@ -22,8 +22,13 @@
         components:{
             Gallery
         },
+        props:{
+            detailList:Array
+        },
         data () {
-            return {showGallery:false}
+            return {
+                showGallery:false,
+            }
         },
         methods:{
             handleGalleryClose:function($event){

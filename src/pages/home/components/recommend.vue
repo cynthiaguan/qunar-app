@@ -5,7 +5,7 @@
             <span class="my-title">猜你喜欢</span>
         </div>
         <ul class="my-like-list">
-            <router-link tag="li" to="/detail" class="my-like-item border-bottom" v-for="(item,index) of recomList" :key="index">
+            <router-link tag="li"  class="my-like-item border-bottom" v-for="(item,index) of recomList" :key="index" :to="'/detail/'+item.id">
                 <a>
                    <div class="my-like-imgcon">
                         <img class="mp-like-img" :src="item.imgUrl" alt="金海湖风景区">

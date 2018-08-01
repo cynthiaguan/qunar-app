@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="header-back" v-show="showHeader">
-            <span class="iconfont">&#xe624;</span>
+            <router-link  to="/" tag="span" class="iconfont">&#xe624;</router-link>
         </div>
         <div v-show="!showHeader" class="header-abs" :style="showOpacity">
             <router-link tag="div" to="/" class="header-left" >
@@ -24,7 +24,7 @@
         },
         methods:{
             handleScroll:function(){
-                console.log('1222')
+                console.log('scroll event needsss')
                 const top = document.documentElement.scrollTop
                 if( top > 60){
                     return this.showHeader = false
@@ -35,7 +35,10 @@
         },
         activated: function () {
             window.addEventListener('scroll',this.handleScroll)
-        },           
+        },
+        deactivated: function(){
+            window.removeEventListener('scroll',this.handleScroll)
+        }   // 对全局事件解绑        
     }
 </script>
 <style lang="stylus" scoped>
