@@ -11,24 +11,27 @@
                 <div class="header-icon">
                    <span class="iconfont">&#xeb26;</span>
                    <em class="mp-imgswipeicon-number">15</em>
-                </div>                        
+                </div> 
+                <List :categoryList = "categoryList"></List>                       
             </div>   
-            <Gallery v-show="showGallery" 
-                    @close="handleGalleryClose"
-                    :swiperList="gallaryImgs">
-            </Gallery>
+            <Fade>
+                <Gallery v-show="showGallery" 
+                        @close="handleGalleryClose"
+                        :swiperList="gallaryImgs">
+                </Gallery>
+            </Fade>
         </div>
-        <List :categoryList = "categoryList">
-        </List> 
     </div>
 </template>
 <script>
     import Gallery from '../../common/gallery/gallery'
+    import Fade from '../../common/animation/fade'
     import List from './list'
     export default{
         name:'Banner',
         components:{
             Gallery,
+            Fade,
             List
         },
         props:{

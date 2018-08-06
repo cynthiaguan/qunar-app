@@ -12,11 +12,13 @@
     import Banner from './components/banner'
     import Header from './components/detailHeader'
     import axios from 'axios'
+    import List from './components/list'
     export default{
         name:'Detail',
         components:{
             Banner,
             Header,
+            List
         },
         data () {
             return{

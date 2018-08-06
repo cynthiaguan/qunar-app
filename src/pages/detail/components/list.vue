@@ -27,7 +27,6 @@
         .ticket-title
             overflow: hidden
             position: relative
-            z-index: 4
             margin-bottom: -.02rem
             padding: 0 .2rem
             height: .88rem

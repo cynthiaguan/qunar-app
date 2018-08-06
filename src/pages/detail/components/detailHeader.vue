@@ -44,6 +44,7 @@
 <style lang="stylus" scoped>
 @import '~@/assets/styles/variable.styl'
     .header
+        z-index:5
         display:flex
         height:0.86 rem
         color:#fff
