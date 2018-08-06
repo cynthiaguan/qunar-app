@@ -14,13 +14,11 @@
 <script>
 	export default {
 		name:"Gallery",
+		props:{
+			swiperList:Array
+		},
 		data:function(){
 			return{
-				swiperList:[
-					{id:"0001",imgUrl:"http://img1.qunarzz.com/sight/p0/1609/d3/d3d5e1066193621ca3.water.jpg_r_800x800_634d475c.jpg"},
-					{id:"0002",imgUrl:"http://img1.qunarzz.com/sight/p0/1606/82/822916df9159942cb4.water.jpg_r_800x800_8c86e29b.jpg"},
-					{id:"0003",imgUrl:"http://img1.qunarzz.com/sight/p0/1606/43/43ebc66fb9f8df3cb4.water.jpg_r_800x800_f90d5c98.jpg"}
-				],
 				swiperOption:{
 	                loop:true,
 	                autoplay:3000,

@@ -1,29 +1,41 @@
 <template>
-    <div class="header" >
-        <div @click="handleClick">              
-            <div class="header-img-wrapper">
-                <img class="header-img" src="//img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_600x330_5d562f69.jpg" alt="金海湖风景区">
-            </div>
-            <div class="header-title">
-                金海湖风景区(AAAA景区)
-            </div>
-            <div class="header-icon">
-               <span class="iconfont">&#xeb26;</span>
-               <em class="mp-imgswipeicon-number">15</em>
-            </div>                        
-        </div>    
-        <Gallery v-show="showGallery" @close="handleGalleryClose"></Gallery>
+    <div>
+        <div class="header" >
+            <div @click="handleClick">              
+                <div class="header-img-wrapper">
+                    <img class="header-img" :src="bannerImg" alt="">
+                </div>
+                <div class="header-title">
+                    {{this.sightName}}
+                </div>
+                <div class="header-icon">
+                   <span class="iconfont">&#xeb26;</span>
+                   <em class="mp-imgswipeicon-number">15</em>
+                </div>                        
+            </div>   
+            <Gallery v-show="showGallery" 
+                    @close="handleGalleryClose"
+                    :swiperList="gallaryImgs">
+            </Gallery>
+        </div>
+        <List :categoryList = "categoryList">
+        </List> 
     </div>
 </template>
 <script>
     import Gallery from '../../common/gallery/gallery'
+    import List from './list'
     export default{
         name:'Banner',
         components:{
-            Gallery
+            Gallery,
+            List
         },
         props:{
-            detailList:Array
+            bannerImg:String,
+            categoryList:Array,
+            gallaryImgs:Array,
+            sightName:String,
         },
         data () {
             return {
@@ -31,7 +43,7 @@
             }
         },
         methods:{
-            handleGalleryClose:function($event){
+            handleGalleryClose:function(event){
                 return this.showGallery= false
             },
             handleClick:function(event){
@@ -79,8 +91,35 @@
             width: .72rem
             height: .72rem
             line-height:.72rem
-            background-color: #194370
             border-radius:50%
             color:white
-            text-align:center       
+            text-align:center
+    .ticket
+        overflow:hidden
+        width:100%
+        height:0
+        padding-bottom:55%
+        margin-bottom: .2rem
+        position:realtive
+        .ticket-title
+            overflow: hidden
+            position: relative
+            z-index: 4
+            margin-bottom: -.02rem
+            padding: 0 .2rem
+            height: .88rem
+            background: #fff
+            color: #333
+            font-size: .32rem
+            line-height: .88rem
+            text-indent: .4rem 
+            padding: .2rem .2rem
+            .ticket-title-header
+                display: inline-block;
+                vertical-align:middle
+                width:.36rem
+                height:.34rem
+                background: url(//s.qunarzz.com/piao/image/touch/sight/detail.png) 0 -.49rem no-repeat;
+                margin-right: .02rem;
+                background-size: .4rem 3rem;                          
 </style>

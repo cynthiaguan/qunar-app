@@ -1,7 +1,11 @@
 <template>
     <div class="container">
-        <Banner :detailList="detailList"></Banner>
-        <Header></Header>
+        <Banner :bannerImg = "bannerImg" 
+                :sightName = "sightName"
+                :categoryList = "categoryList"
+                :gallaryImgs = "gallaryImgs" >
+        </Banner>
+        <Header ></Header>
     </div>
 </template>
 <script>
@@ -16,19 +20,26 @@
         },
         data () {
             return{
-                detailList:[]
+                bannerImg:"",
+                categoryList:[],
+                gallaryImgs:[],
+                sightName:"",
             }
         },
         methods:{
-            getDetailInfo(){
+            getDetailInfo () {
                 axios.get('/api/detail.json')
                     .then(this.getDetailInfoSuccess)
             },
-            getDetailInfoSuccess(res){
-            console.log('detail achieve')
+            getDetailInfoSuccess (res) {
+                console.log('detail achieve')
                 const data = res.data
-                if(data.ret && data.detailList){
-                    this.detailList = data.detailList
+                if(data.ret && data.data){
+                    this.bannerImg = data.data.bannerImg
+                    this.categoryList = data.data.categoryList
+                    this.gallaryImgs = data.data.gallaryImgs
+                    this.sightName = data.data.sightName
+                    console.log(this.bannerImg,this.categoryList,this.gallaryImgs,this.sightName)
                 }
             }
         },

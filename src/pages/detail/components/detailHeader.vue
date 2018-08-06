@@ -24,7 +24,7 @@
         },
         methods:{
             handleScroll:function(){
-                console.log('scroll event needsss')
+                //console.log('scroll event needsss')
                 const top = document.documentElement.scrollTop
                 if( top > 60){
                     return this.showHeader = false
